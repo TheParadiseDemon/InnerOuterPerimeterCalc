@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Характеристики равнобедренного треугольника</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="showinputs.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="image">
+            <image src="triangle.jpg"></image>
+        </div>
+        <div class="check">
+            <form>
+                <div class="inputs">
+                    <label>
+                        <select id="input" size="1" onclick="TurnBlack(this)">
+                            <option selected value="none">-- Выберете входные условия --</option>
+                            <option value="sideandangle">Боковая сторона и угол при основании</option>
+                            <option value="twosides">Две стороны</option>
+                        </select>
+                    </label>
+                </div>
+
+                <input type="button" id="showinput" value="Показать" onclick="Show()">
+                <div id="inputdata">
+                    <div hidden="hidden" id="firstside"  onclick="TurnBlack(this)">
+                        <label> AB =
+                            <input type="number" id="firstsideinput" min = "1">
+                        </label>
+                    </div>
+                    <div hidden="hidden" id="secondside" onclick="TurnBlack(this)">
+                        <label> AC =
+                            <input type="number" id="secondsideinput" min = "1">
+                        </label>
+                    </div>
+                    <div hidden="hidden" id="angle" onclick="TurnBlack(this)">
+                        <label> угол BAC =
+                            <input type="number" id="angleinput" min = "1" max = "89">
+                        </label>
+                    </div>
+                </div>
+
+                <p>
+                    Найти:
+                </p>
+                <div>
+                    <select multiple id="whattofind" onclick="TurnBlack(this)">
+                        <option value="innercircle">
+                            Радиус вписанной окружности
+                        </option>
+                        <option value="outercircle">
+                            Радиус описанной окружности
+                        </option>
+                        <option value="perimeter">
+                            Периметр
+                        </option>
+                    </select>
+                </div>
+
+                <div id="buttons">
+                    <button type="reset" onclick="ClearAll()">Очистить</button>
+                    <button onclick="Solve()">Вычислить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="answers">
+    </div>
+</body>
+</html>
